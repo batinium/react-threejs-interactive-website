@@ -12,7 +12,13 @@ import { useFrame, useThree } from "@react-three/fiber";
 import { a } from "@react-spring/three";
 
 import islandScene from "../assets/3d/island.glb";
-const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
+const Island = ({
+  isRotating,
+  setIsRotating,
+  setCurrentStage,
+  children,
+  ...props
+}) => {
   const islandRef = useRef();
   const { gl, viewport } = useThree();
   const { nodes, materials } = useGLTF(islandScene);
@@ -165,6 +171,7 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
         geometry={nodes.pCube11_rocks1_0.geometry}
         material={materials.PaletteMaterial001}
       />
+      {children}
     </a.group>
   );
 };

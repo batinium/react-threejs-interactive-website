@@ -6,7 +6,7 @@ import Sky from "../models/Sky";
 import Bird from "../models/Bird";
 import Plane from "../models/Plane";
 import HomeInfo from "../components/HomeInfo";
-
+import Island2 from "../models/Island2";
 import song from "../assets/sakura.mp3";
 import soundon from "../assets/icons/soundon.png";
 import soundoff from "../assets/icons/soundoff.png";
@@ -44,7 +44,7 @@ const Home = () => {
   const adjustPlaneForScreenSize = () => {
     let screenScale, screenPosition;
     if (window.innerWidth < 768) {
-      screenScale = [1.5, 1.5, 1.5];
+      screenScale = [2, 2, 2];
       screenPosition = [0, -1.5, -5];
     } else {
       screenScale = [3, 3, 3];
@@ -79,21 +79,33 @@ const Home = () => {
             intensity={1}
           />
           <Sky isRotating={isRotating} />
-          <Bird />
+          <Bird position={[-5, 0, 1]} scale={[0.003, 0.003, 0.003]} />
+
           <Plane
             isRotating={isRotating}
             scale={planeScale}
             position={planePosition}
             rotation={[0, 20, 0]}
           />
-          <Island
-            position={islandPosition}
-            scale={islandScale}
-            rotation={islandRotation}
-            isRotating={isRotating}
-            setIsRotating={setIsRotating}
-            setCurrentStage={setCurrentStage}
-          ></Island>
+          {
+            <Island
+              position={islandPosition}
+              scale={islandScale}
+              rotation={islandRotation}
+              isRotating={isRotating}
+              setIsRotating={setIsRotating}
+              setCurrentStage={setCurrentStage}
+            >
+              <Island2
+                position={[50, 50, -200]}
+                scale={islandScale}
+                rotation={islandRotation}
+                isRotating={isRotating}
+                setIsRotating={setIsRotating}
+                setCurrentStage={setCurrentStage}
+              />
+            </Island>
+          }
         </Suspense>
       </Canvas>
       <div className="absolute bottom-2 left-2">
