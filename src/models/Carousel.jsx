@@ -32,9 +32,9 @@ const Carousel = ({ scale, ...props }) => {
           scale={[0.1, 0.1, 0.1]}
           rotation={[0, Math.PI / 4, 0]}
         />
-        <mesh position={[0, -1 / 2, 0]}>
-          <meshStandardMaterial color={"darkgreen"} />
-          <cylinderGeometry args={[3, 3, 1 / 6, 64]} />
+        <mesh position={[0, -0.7, 0]}>
+          <meshStandardMaterial color={"#80917e"} />
+          <cylinderGeometry args={[5, 5, 1 / 6, 64]} />
         </mesh>
         <mesh scale={[1 / 6, 1, 6]}>
           <boxGeometry />
