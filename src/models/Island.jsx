@@ -102,6 +102,7 @@ const Island = ({
       islandRef.current.rotation.y += rotationSpeed.current;
     } else {
       const rotation = islandRef.current.rotation.y;
+
       /**
        * Normalize the rotation value to ensure it stays within the range [0, 2 * Math.PI].
        * The goal is to ensure that the rotation value remains within a specific range to
@@ -119,6 +120,7 @@ const Island = ({
        *     circle in radians.
        */
       // Set the current stage based on the island's orientation
+
       const normalizedRotation =
         ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
 
