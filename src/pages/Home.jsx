@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import Experience from "../components/Experience";
 import HomeInfo from "../components/HomeInfo";
-import song from "../assets/sakura.mp3";
+import song from "../assets/bgsong.mp3";
 import soundon from "../assets/icons/soundon.png";
 import soundoff from "../assets/icons/soundoff.png";
 
@@ -11,7 +11,6 @@ const Home = () => {
   audioRef.current.volume = 0.4;
   audioRef.current.loop = true;
 
-  const [isRotating, setIsRotating] = useState(false);
   const [currentStage, setCurrentStage] = useState(1);
   const [isPlayingMusic, setIsPlayingMusic] = useState(false);
 
@@ -30,17 +29,8 @@ const Home = () => {
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>
 
-      <Canvas
-        className={`w-full h-screen bg-transparent ${
-          isRotating ? "cursor-grabbing" : "cursor-grab"
-        }`}
-        camera={{ near: 0.1, far: 1000, position: [0, -5, 0] }}
-      >
-        <Experience
-          isRotating={isRotating}
-          setIsRotating={setIsRotating}
-          setCurrentStage={setCurrentStage}
-        />
+      <Canvas camera={{ near: 0.1, far: 1000, position: [0, -5, 0] }}>
+        <Experience setCurrentStage={setCurrentStage} />
       </Canvas>
 
       <div className="absolute bottom-2 left-2">

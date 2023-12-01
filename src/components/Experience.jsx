@@ -3,12 +3,10 @@ import { useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Loader from "./Loader";
 import Sky from "../models/Sky";
-import Bird from "../models/Bird";
-import Plane from "../models/Plane";
-import Carousel from "../models/Carousel";
-import * as THREE from "three";
 
-const Experience = ({ isRotating, setIsRotating, setCurrentStage }) => {
+import Carousel from "../models/Carousel";
+
+const Experience = ({ isRotating, setCurrentStage }) => {
   const { camera } = useThree();
   const adjustExperienceForScreenSize = () => {
     let screenScale = null;
@@ -22,9 +20,9 @@ const Experience = ({ isRotating, setIsRotating, setCurrentStage }) => {
 
   const getOrbitControlLimits = () => {
     if (window.innerWidth < 768) {
-      return { minDistance: 3, maxDistance: 6 }; // Closer zoom for smaller screens
+      return { minDistance: 2, maxDistance: 4 }; // Closer zoom for smaller screens
     } else {
-      return { minDistance: 5, maxDistance: 8 }; // Default zoom for larger screens
+      return { minDistance: 3, maxDistance: 5 }; // Default zoom for larger screens
     }
   };
 
@@ -67,7 +65,6 @@ const Experience = ({ isRotating, setIsRotating, setCurrentStage }) => {
         />
         <Sky isRotating={isRotating} />
 
-        <Bird position={[-5, 0, 1]} scale={[0.003, 0.003, 0.003]} />
         <OrbitControls
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 3}

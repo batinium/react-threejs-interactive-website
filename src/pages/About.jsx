@@ -1,5 +1,5 @@
 import React from "react";
-import { skills, experiences } from "../constants";
+import { skills, experiences, socialLinks } from "../constants";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -18,12 +18,12 @@ const About = () => {
       </h1>
       <div className="mt-5 flex flex-col gap-3 text-slate 500">
         <p>
-          Aviation English Specialist with a demonstrated history of working in
-          the education management industry. Skilled in English as a Second
-          Language (ESL), Teaching English as a Foreign Language (TEFL),
-          Curriculum Development, Lesson Planning, and Classroom Management.
-          Strong education professional with a Bachelor of Arts (B.A.) focused
-          in English Language and Literature.
+          With 4 years of experience as an English and Math instructor, I
+          possess a strong aptitude for simplifying complex concepts and making
+          them understandable. However, driven by my passion for problem-solving
+          and the dynamic world of technology, I decided to shift my focus to
+          the IT sector. Since then, I have actively sought opportunities to
+          enhance my skills in innovation, technology, and education.
         </p>
       </div>
       <div className="py-10 flex flex-col">
@@ -47,8 +47,8 @@ const About = () => {
         <h3 className="subhead-text">Work Experience</h3>
         <div className="mt-5 flex flex-col gap-3 text-slate 500">
           <p>
-            English teacher at English First, Jakarta, Indonesia (2018-2020) and
-            English teacher at Wall Street English, Jakarta, Indonesia
+            I had the experience to work at different companies and different
+            positions. You can find the details below in the timeline.
           </p>
         </div>
         <div className="mt-12 flex">
@@ -62,7 +62,7 @@ const About = () => {
                     <img
                       src={experience.icon}
                       alt={experience.company_name}
-                      className="w-[60%] h-[60%] object-contain"
+                      className="w-[80%] h-[80%] object-contain"
                     />
                   </div>
                 }
@@ -101,6 +101,25 @@ const About = () => {
               </VerticalTimelineElement>
             ))}
           </VerticalTimeline>
+        </div>
+      </div>
+      <div className="py-10 flex flex-col">
+        <h3 className="subhead-text">Socials</h3>
+        <div className="mt-16 flex flex-wrap gap-12">
+          {socialLinks.map((social) => (
+            <div className="block-container w-20 h-20">
+              <div className="btn-back rounded-xl"></div>
+              <div className="btn-front rounded-xl flex justify-center items-center">
+                <a href={social.link} target="_blank">
+                  <img
+                    src={social.iconUrl}
+                    alt={social.name}
+                    className="w-[100%] h-[100%] object-contain"
+                  />
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
       <hr className="border-slate-200" />
