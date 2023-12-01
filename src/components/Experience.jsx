@@ -22,7 +22,7 @@ const Experience = ({ isRotating, setCurrentStage }) => {
     if (window.innerWidth < 768) {
       return { minDistance: 2, maxDistance: 4 }; // Closer zoom for smaller screens
     } else {
-      return { minDistance: 3, maxDistance: 5 }; // Default zoom for larger screens
+      return { minDistance: 3, maxDistance: 6 }; // Default zoom for larger screens
     }
   };
 
@@ -66,6 +66,7 @@ const Experience = ({ isRotating, setCurrentStage }) => {
         <Sky isRotating={isRotating} />
 
         <OrbitControls
+          target={[0, 0, 1]}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 3}
           minDistance={minDistance}

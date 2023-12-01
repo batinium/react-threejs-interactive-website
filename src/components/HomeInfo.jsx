@@ -17,29 +17,32 @@ const InfoBox = ({ text, link, btnText }) => {
 const renderContent = {
   1: (
     <h1 className="sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5">
-      Hi, I am <span className="font-semibold"> Batin</span> 👋 <br />a
-      full-stack developer with a passion for building beautiful
+      Hello, I am <span className="font-semibold"> Batin</span> 👋 <br />
+      an Aviation English Specialist and a Hobbyist Developer, <br />
+      with a passion for learning and teaching. <br />I am currently interested
+      in <span className="font-semibold">Game Development</span> and{" "}
+      <span className="font-semibold">Graphics Programming</span>.
     </h1>
   ),
   2: (
     <InfoBox
-      text="You can find more info about me"
+      text="Here is my story and my skills you can check out"
       link="/about"
-      btnText={"About me"}
+      btnText={"About Me"}
     />
   ),
   3: (
     <InfoBox
-      text="Here are my projects you can check"
+      text="Here is my projects you can check out"
       link="/projects"
       btnText={"My Projects"}
     />
   ),
   4: (
     <InfoBox
-      text="Do you have any questions that you need to ask?"
+      text="Get in touch with me for any questions or collaborations"
       link="/contact"
-      btnText={"Contact With Me"}
+      btnText={"Contact Me"}
     />
   ),
 };
